@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'comic-sans';
+    src: url('/assets/fonts/comic-sans-bold.ttf') format('truetype');
+}
+
+body {
+    max-width: 1280px;
+    font-family: 'comic-sans';
+}
