@@ -4,6 +4,63 @@
 }
 
 body {
-    max-width: 1280px;
+    background-image: url('/assets/images/pattern-websafe.png');
+    background-repeat: repeat-x repeat-y;
+    background-size: 50px 50px;
+    color: #fff;
     font-family: 'comic-sans';
+    margin: 0;
+    padding: 0;
+    max-width: 1280px;
+}
+
+.site-header {
+    background-image: url('/assets/images/pattern-websafe.png');
+    background-repeat: repeat-x repeat-y;
+    background-size: 80px 80px;
+    border-bottom: 10px solid #ccc;
+}
+
+.site-header h1 {
+    font-size: 64px;
+    line-height: 1.1;
+}
+
+.site-header .first {
+    color: #cc33ff;
+}
+
+.site-header .second {
+    color: #cc0099;
+}
+
+.site-header .third {
+    color: #ff6633;
+}
+
+.site-header .fourth {
+    color: #660033;
+}
+
+.site-nav {
+    background-image: url('/assets/images/pattern-websafe.png');
+    background-repeat: repeat-x repeat-y;
+    background-size: 70px 70px;
+    border-bottom: 10px solid #ccc;
+}
+
+.site-content {
+    text-shadow: 3px 3px #000;
+}
+
+.site-footer {
+    background-image: url('/assets/images/pattern-websafe.png');
+    background-repeat: repeat-x repeat-y;
+    background-size: 20px 20px;
+    border-top: 10px solid #ccc;
+}
+
+.web-ring-header,
+.web-ring-title {
+    text-shadow: 3px 3px #000;
 }
