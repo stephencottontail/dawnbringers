@@ -66,9 +66,91 @@ body {
     border-top: 10px solid #ccc;
 }
 
-.web-ring-header,
-.web-ring-title {
+.site-footer img {
+    max-width: 100%;
+    height: auto;
+}
+
+.web-ring {
+    border-width: 9px;
+    border-style: solid;
+    border-top-color: #666;
+    border-right-color: #000;
+    border-bottom-color: #333;
+    border-left-color: #999;
+    display: grid;
+    display: -ms-grid;
+    -ms-grid-rows: 50px 80px 30px;
+    grid-template-rows: 50px 80px 30px;
+    -ms-grid-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "header header"
+                         "title nav"
+                         "footer footer";
+}
+
+.web-ring > * {
+    box-shadow: inset 0 0 3px #000;
+    margin: 2px;
+}
+
+.web-ring h2,
+.web-ring p {
+    margin: 0;
+}
+
+.web-ring-header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: header;
     text-shadow: 3px 3px #000;
+}
+
+.web-ring-title {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: title;
+    text-shadow: 3px 3px #000;
+}
+
+.web-ring-nav {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: nav;
+    text-align: center;
+}
+
+.web-ring-nav span {
+    display: block;
+}
+
+.web-ring-footer {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: footer;
+    text-align: center;
+}
+
+@media screen and (min-width: 896px) {
+    .site-footer {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    .site-footer .img-wrapper {
+        flex: 1 auto;
+    }
+
+    .web-ring {
+        flex: 0 0 450px;
+        margin: 0 10px;
+    }
 }
 </style>
     </head>
@@ -88,7 +170,9 @@ body {
 
             </main>
             <footer class="site-footer">
-                <img src="assets/images/best-viewed.png" />
+                <div class="img-wrapper">
+                    <img src="assets/images/best-viewed.png" />
+                </div>
                 <div class="web-ring">
                     <div class="web-ring-header">
                         <h2>A Proud Member Of...</h2>
@@ -97,6 +181,7 @@ body {
                         <p>Steve's Webring!</p>
                     </div>
                     <div class="web-ring-nav">
+                        <span>[ Prev ]</span>
                         <a href="https://stephencottontail.com/">[ Next ]</a>
                     </div>
                     <div class="web-ring-footer">
