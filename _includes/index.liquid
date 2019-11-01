@@ -26,11 +26,14 @@
                 {% if collections.post %}
                     <button id="nav-toggle">click <span class="underline">HERE</span> to see the list!</button>
                     <ul>
-                        <li><a href="https://www.apple.com/">FedEX</a></li>
-                        <li><a href="https://www.apple.com/">Electric</a></li>
-                        <li><a href="https://www.apple.com/">Aaa Bbb Ccc Ddd Eee Fff Ggg Hhh Iii Jjj Kkk Lll Mmm Nnn Ooo</a></li>
-                        <li><a href="https://www.apple.com/">Can't touch this</a></li>
-                        <li><a href="https://www.campbells.com/">Campbell's Soup</a></li>
+                        {%- for post in collections.post -%}
+                            <li>
+                                {% if page.url == post.url %}
+                                    {{ "assets/images/triangle.svg" | useSVG }}
+                                {% endif %}
+                                <a href={{ post.url }}>{{ post.data.title }}</a>
+                            </li>
+                        {%- endfor -%}
                     </ul>
                 {% else %}
                     <p>This is where I'd put a list of our enemies...</p>
