@@ -3,6 +3,50 @@
     src: url('/assets/fonts/comic-sans-bold.ttf') format('truetype');
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate( 45deg );
+    }
+
+    50% {
+        transform: rotate( -100deg );
+    }
+
+    80% {
+        transform: rotate( 30deg );
+    }
+
+    90% {
+        transform: rotate( -10deg );
+    }
+
+    100% {
+        transform: rotate( 0 );
+    }
+}
+
+@keyframes rotate3D {
+    0% {
+        transform: rotateY( 45deg );
+    }
+
+    50% {
+        transform: rotateY( -100deg );
+    }
+
+    80% {
+        transform: rotateY( 30deg );
+    }
+
+    90% {
+        transform: rotateY( -10deg );
+    }
+
+    100% {
+        transform: rotateY( 0 );
+    }
+}
+
 body {
     background-image: url('/assets/images/pattern-websafe.png');
     background-repeat: repeat-x repeat-y;
@@ -21,12 +65,14 @@ body {
     border-bottom: 10px solid #ccc;
 }
 
-.site-header h1 {
-    font-size: 64px;
+.site-title {
+    font-size: 9.05vw;
     line-height: 1.1;
+    text-align: center;
+    text-shadow: 3px 3px #000;
 }
 
-.site-header .first {
+.site-title .first {
     color: #cc33ff;
 }
 
@@ -40,6 +86,43 @@ body {
 
 .site-header .fourth {
     color: #660033;
+}
+
+.under-construction {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.under-construction > * {
+    flex-grow: 1;
+    flex-basis: calc( 500px * 999 - 100% * 999 );
+    text-align: center;
+}
+
+.under-construction #bar {
+    animation-name: rotate;
+    animation-duration: 2000ms;
+    transform-origin: 50% 0;
+}
+
+.under-construction #under {
+    animation-name: rotate3D;
+    animation-duration: 2500ms;
+    transform-origin: 0 50%;
+}
+
+.under-construction .first #under,
+.under-construction .first #bar {
+    animation-delay: 250ms;
+}
+
+.under-construction .second #under,
+.under-construction .second #bar {
+    animation-delay: 550ms;
+}
+.under-construction .third #under,
+.under-construction .third #bar {
+    animation-delay: 950ms;
 }
 
 .site-nav {
