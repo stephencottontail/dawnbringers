@@ -26,14 +26,14 @@
                 {% if collections.post %}
                     <button id="nav-toggle">click <span class="underline">HERE</span> to see the list!</button>
                     <ul>
-                        {%- for post in collections.post -%}
+                        {% for post in collections.post %}
                             <li>
                                 {% if page.url == post.url %}
                                     {{ "assets/images/triangle.svg" | useSVG }}
                                 {% endif %}
                                 <a href={{ post.url }}>{{ post.data.title }}</a>
                             </li>
-                        {%- endfor -%}
+                        {% endfor %}
                     </ul>
                 {% else %}
                     <p>This is where I'd put a list of our enemies...</p>
@@ -46,7 +46,7 @@
         </div>
         <footer class="site-footer">
             <div class="img-wrapper">
-                <img src="assets/images/best-viewed.png" />
+                <img src="../../assets/images/best-viewed.png" />
             </div>
             <div class="web-ring">
                 <div class="web-ring-header">
