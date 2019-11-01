@@ -68,6 +68,15 @@ body {
     max-width: 1280px;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    margin: 0 0 20px 0;
+}
+
 .site-header {
     background-image: url('/assets/images/pattern-websafe.png');
     background-repeat: repeat-x repeat-y;
@@ -135,6 +144,10 @@ body {
     animation-delay: 950ms;
 }
 
+.content-wrapper {
+    text-shadow: 3px 3px #000;
+}
+
 #site-nav {
     background-image: url('/assets/images/pattern-websafe.png');
     background-repeat: repeat-x repeat-y;
@@ -185,7 +198,6 @@ body {
 }
 
 .site-content {
-    text-shadow: 3px 3px #000;
 }
 
 @media screen and (min-width: 820px) {
@@ -219,10 +231,6 @@ body {
     border-top: 10px solid #ccc;
 }
 
-.site-footer img {
-    max-width: 100%;
-    height: auto;
-}
 
 .web-ring {
     border-width: 9px;
@@ -447,14 +455,10 @@ body {
         </header>
         <div class="content-wrapper">
             <nav id="site-nav">
-                <button id="nav-toggle">click <span class="underline">HERE</span> to see the list!</button>
-                <ul>
-                    <li><a href="https://www.apple.com/">FedEX</a></li>
-                    <li><a href="https://www.apple.com/">Electric</a></li>
-                    <li><a href="https://www.apple.com/">Aaa Bbb Ccc Ddd Eee Fff Ggg Hhh Iii Jjj Kkk Lll Mmm Nnn Ooo</a></li>
-                    <li><a href="https://www.apple.com/">Can't touch this</a></li>
-                    <li><a href="https://www.campbells.com/">Campbell's Soup</a></li>
-                </ul>
+                
+                    <p>This is where I'd put a list of our enemies...</p>
+                    <img src="assets/images/if-i-had-one.jpg" />
+                
             </nav>
             <main class="site-content">
                 <h1>Hi! We're the Dawnbringers! :)</h1>
@@ -484,18 +488,7 @@ body {
                 </div>
             </div>
         </footer>
-        <script type="text/javascript">
-            var toggle = document.getElementById( 'nav-toggle' );
-            var menu = document.getElementById( 'site-nav' );
-
-            toggle.addEventListener( 'click', function() {
-                if ( menu.classList.contains( 'active' ) ) {
-                    menu.classList.remove( 'active' );
-                } else {
-                    menu.classList.add( 'active' );
-                }
-            } );
-        </script>
+        
     </body>
 </html>
 

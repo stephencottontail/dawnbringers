@@ -62,6 +62,15 @@ body {
     max-width: 1280px;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    margin: 0 0 20px 0;
+}
+
 .site-header {
     background-image: url('/assets/images/pattern-websafe.png');
     background-repeat: repeat-x repeat-y;
@@ -129,6 +138,10 @@ body {
     animation-delay: 950ms;
 }
 
+.content-wrapper {
+    text-shadow: 3px 3px #000;
+}
+
 #site-nav {
     background-image: url('/assets/images/pattern-websafe.png');
     background-repeat: repeat-x repeat-y;
@@ -179,7 +192,6 @@ body {
 }
 
 .site-content {
-    text-shadow: 3px 3px #000;
 }
 
 @media screen and (min-width: 820px) {
@@ -213,10 +225,6 @@ body {
     border-top: 10px solid #ccc;
 }
 
-.site-footer img {
-    max-width: 100%;
-    height: auto;
-}
 
 .web-ring {
     border-width: 9px;

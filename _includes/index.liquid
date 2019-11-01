@@ -23,14 +23,19 @@
         </header>
         <div class="content-wrapper">
             <nav id="site-nav">
-                <button id="nav-toggle">click <span class="underline">HERE</span> to see the list!</button>
-                <ul>
-                    <li><a href="https://www.apple.com/">FedEX</a></li>
-                    <li><a href="https://www.apple.com/">Electric</a></li>
-                    <li><a href="https://www.apple.com/">Aaa Bbb Ccc Ddd Eee Fff Ggg Hhh Iii Jjj Kkk Lll Mmm Nnn Ooo</a></li>
-                    <li><a href="https://www.apple.com/">Can't touch this</a></li>
-                    <li><a href="https://www.campbells.com/">Campbell's Soup</a></li>
-                </ul>
+                {% if collections.post %}
+                    <button id="nav-toggle">click <span class="underline">HERE</span> to see the list!</button>
+                    <ul>
+                        <li><a href="https://www.apple.com/">FedEX</a></li>
+                        <li><a href="https://www.apple.com/">Electric</a></li>
+                        <li><a href="https://www.apple.com/">Aaa Bbb Ccc Ddd Eee Fff Ggg Hhh Iii Jjj Kkk Lll Mmm Nnn Ooo</a></li>
+                        <li><a href="https://www.apple.com/">Can't touch this</a></li>
+                        <li><a href="https://www.campbells.com/">Campbell's Soup</a></li>
+                    </ul>
+                {% else %}
+                    <p>This is where I'd put a list of our enemies...</p>
+                    <img src="assets/images/if-i-had-one.jpg" />
+                {% endif %}
             </nav>
             <main class="site-content">
                 {{ content }}
@@ -56,18 +61,20 @@
                 </div>
             </div>
         </footer>
-        <script type="text/javascript">
-            var toggle = document.getElementById( 'nav-toggle' );
-            var menu = document.getElementById( 'site-nav' );
+        {% if collections.post %}
+            <script type="text/javascript">
+                var toggle = document.getElementById( 'nav-toggle' );
+                var menu = document.getElementById( 'site-nav' );
 
-            toggle.addEventListener( 'click', function() {
-                if ( menu.classList.contains( 'active' ) ) {
-                    menu.classList.remove( 'active' );
-                } else {
-                    menu.classList.add( 'active' );
-                }
-            } );
-        </script>
+                toggle.addEventListener( 'click', function() {
+                    if ( menu.classList.contains( 'active' ) ) {
+                        menu.classList.remove( 'active' );
+                    } else {
+                        menu.classList.add( 'active' );
+                    }
+                } );
+            </script>
+        {% endif %}
     </body>
 </html>
 
