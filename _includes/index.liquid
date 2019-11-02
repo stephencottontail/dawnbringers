@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Dawnbringers!</title>
-        <style>{% include assets/css/style.css %}</style>
+        {% capture css %}
+            {% include assets/css/normalize.css %}
+            {% include assets/css/style.css %}
+        {% endcapture %}
+        <style>{{ css | safe }}</style>
     </head>
     <body>
         <header class="site-header">

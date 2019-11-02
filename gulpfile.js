@@ -9,7 +9,7 @@ gulp.task( 'styles', function ( done ) {
         autoprefixer( { overrideBrowserslist: ['last 1 version' ] } ),
         nano( { preset: 'default' } )
     ];
-    return gulp.src( './assets/css/*.css' )
+    return gulp.src( [ './node_modules/normalize.css/normalize.css', './assets/css/*.css' ] )
         .pipe( postCSS( plugins ) )
         .pipe( gulp.dest( './_includes/assets/css' ) );
 
