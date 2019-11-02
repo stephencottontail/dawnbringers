@@ -72,6 +72,8 @@ p {
 }
 
 .site-header {
+    display: flex;
+    flex-wrap: wrap;
     background-image: url('/assets/images/pattern-websafe.png');
     background-repeat: repeat-x repeat-y;
     background-size: 80px 80px;
@@ -79,8 +81,9 @@ p {
 }
 
 .site-title {
-    font-size: 9.05vw;
-    line-height: 1.1;
+    flex-basis: 100%;
+    font-size: 12.45vw;
+    line-height: 1.8;
     text-align: center;
     text-shadow: 3px 3px #000;
 }
@@ -89,53 +92,75 @@ p {
     color: #cc33ff;
 }
 
-.site-header .second {
+.site-title .second {
     color: #cc0099;
 }
 
-.site-header .third {
+.site-title .third {
     color: #ff6633;
 }
 
-.site-header .fourth {
+.site-title .fourth {
     color: #660033;
 }
 
-.under-construction {
-    display: flex;
-    flex-wrap: wrap;
+.site-header .construction {
+    flex-basis: 100%;
 }
 
-.under-construction > * {
-    flex-grow: 1;
-    flex-basis: calc( 500px * 999 - 100% * 999 );
-    text-align: center;
+@media screen and (min-width: 881px) {
+    .site-header .construction {
+        flex-basis: calc( 100% / 3 );
+    }
+
+    .site-title {
+        font-size: 10.45vw;
+        line-height: 1.2;
+    }
 }
 
-.under-construction #bar {
+@media screen and (max-width: 880px) {
+    .site-title {
+        order: 2;
+    }
+
+    .construction-first {
+        order: 1;
+    }
+
+    .construction-second {
+        order: 3;
+    }
+
+    .construction-third {
+        order: 4;
+    }
+}
+
+.site-header #bar {
     animation-name: rotate;
     animation-duration: 2000ms;
     transform-origin: 50% 0;
 }
 
-.under-construction #under {
+.site-header #under {
     animation-name: rotate3D;
     animation-duration: 2500ms;
     transform-origin: 0 50%;
 }
 
-.under-construction .first #under,
-.under-construction .first #bar {
+.construction-first #under,
+.construction-first #bar {
     animation-delay: 250ms;
 }
 
-.under-construction .second #under,
-.under-construction .second #bar {
+.construction-second #under,
+.construction-second #bar {
     animation-delay: 550ms;
 }
 
-.under-construction .third #under,
-.under-construction .third #bar {
+.construction-third #under,
+.construction-third #bar {
     animation-delay: 950ms;
 }
 
