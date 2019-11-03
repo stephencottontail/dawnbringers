@@ -47,6 +47,48 @@
     }
 }
 
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    12% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+        transform: translate(-22%,22%);
+    }
+
+    37% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-44%,0);
+    }
+
+    62% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+        transform: translate(-22%,22%)
+    }
+
+    87% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
 .underline {
     text-decoration: underline;
 }
@@ -69,6 +111,57 @@ img {
 
 p {
     margin: 0 0 20px 0;
+}
+
+.masthead {
+    position: relative;
+    height: 30px;
+    width: 234px;
+    margin: 20px auto 0;
+}
+
+.masthead a {
+    display: block;
+}
+
+.masthead img {
+    height: 100%;
+    width: 100%;
+}
+
+.masthead .logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    animation-name: blink;
+    animation-duration: 8500ms;
+    animation-iteration-count: infinite;
+}
+
+@media screen and (min-width: 500px) {
+    .masthead {
+        height: 60px;
+        width: 468px;
+    }
+
+    .logo {
+        height: 45px;
+        width: 45px;
+    }
+}
+
+@media screen and (min-width: 1098px) {
+    .masthead {
+        height: calc(60px * 2);
+        width: calc(468px * 2);
+    }
+
+    .masthead .logo {
+        height: 90px;
+        width: 90px;
+    }
 }
 
 .site-header {
