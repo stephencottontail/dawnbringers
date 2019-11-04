@@ -31,9 +31,15 @@
         </header>
         <div class="content-wrapper">
             <nav id="site-nav">
-                {% if collections.post %}
-                    <button id="nav-toggle">click <span class="underline">HERE</span> to see the list!</button>
-                    <ul>
+                <button id="nav-toggle">click <span class="underline">HERE</span> to see the list!</button>
+                <ul>
+                    <li>
+                        {% if 'http://dawnbringers.stephencottontail.com' == page.url %}
+                            {{ "assets/images/triangle.svg" | useSVG }}
+                        {% endif %}
+                        <a href="http://dawnbringers.stephencottontail.com/">Home</a>
+                    </li>
+                    {% if collections.post %}
                         {% for post in collections.post %}
                             <li>
                                 {% if page.url == post.url %}
@@ -42,11 +48,12 @@
                                 <a href={{ post.url }}>{{ post.data.title }}</a>
                             </li>
                         {% endfor %}
-                    </ul>
-                {% else %}
+                    {% endif %}
+                </ul>
+                {% unless collections.post %}
                     <p>This is where I'd put a list of our enemies...</p>
                     <img src="assets/images/if-i-had-one.jpg" />
-                {% endif %}
+                {% endunless %}
             </nav>
             <main class="site-content">
                 {{ content }}
