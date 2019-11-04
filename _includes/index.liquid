@@ -31,7 +31,9 @@
         </header>
         <div class="content-wrapper">
             <nav id="site-nav">
-                <button id="nav-toggle">click <span class="underline">HERE</span> to see the list!</button>
+                {% if collections.post %}
+                    <button id="nav-toggle">click <span class="underline">HERE</span> to see the list!</button>
+                {% endif %}
                 <ul>
                     <li>
                         {% if 'http://dawnbringers.stephencottontail.com' == page.url %}
